@@ -241,7 +241,7 @@ public class ChooserDialogFragment extends android.app.DialogFragment {
     private void populateList() {
         storagesList = new ArrayList<>();
 
-        File storageDir = new File("/storage");
+        File storageDir = new File(Environment.getExternalStorageDirectory().getPath());
         String internalStoragePath = Environment.getExternalStorageDirectory().getAbsolutePath();
 
         File[] volumeList = storageDir.listFiles();
@@ -258,12 +258,12 @@ public class ChooserDialogFragment extends android.app.DialogFragment {
 
 
         for (File f : volumeList) {
-           // if (!f.getName().equals(MemoryUtil.SELF_DIR_NAME)
-             //       && !f.getName().equals(MemoryUtil.EMULATED_DIR_KNOX)
-           //         && !f.getName().equals(MemoryUtil.EMULATED_DIR_NAME)
-                 //   && !f.getName().equals(MemoryUtil.SDCARD0_DIR_NAME)
-            //        && !f.getName().equals(MemoryUtil.CONTAINER)
-            //        && !f.getName().toLowerCase().contains("enc_emulated")) {
+         //  if (!f.getName().equals(MemoryUtil.SELF_DIR_NAME)
+           //         && !f.getName().equals(MemoryUtil.EMULATED_DIR_KNOX)
+             //       && !f.getName().equals(MemoryUtil.EMULATED_DIR_NAME)
+               //     && !f.getName().equals(MemoryUtil.SDCARD0_DIR_NAME)
+                 //   && !f.getName().equals(MemoryUtil.CONTAINER)
+                   // && !f.getName().toLowerCase().contains("enc_emulated")) {
                 Storages sharedStorage = new Storages();
                 String fPath = f.getAbsolutePath();
                 sharedStorage.setStorageTitle(f.getName());
