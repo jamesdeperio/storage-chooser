@@ -123,7 +123,7 @@ public class ChooserDialogFragment extends android.app.DialogFragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 final String dirPath = evaluatePath(i);
 
-                if (new File(dirPath).canRead()) {
+                if (new File(dirPath).isDirectory()) {
                     // if allowCustomPath is called then directory chooser will be the default secondary dialog
                     if (mConfig.isAllowCustomPath()) {
                         // if developer wants to apply threshold
